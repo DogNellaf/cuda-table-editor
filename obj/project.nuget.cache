@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "B8/Ksxu82Iw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\DogNellaf\\Desktop\\Share\\Программа2\\table_editor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DogNellaf\\.nuget\\packages\\managedcuda\\10.0.0\\managedcuda.10.0.0.nupkg.sha512",
+    "C:\\Users\\DogNellaf\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\DogNellaf\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\DogNellaf\\.nuget\\packages\\system.drawing.common\\4.5.1\\system.drawing.common.4.5.1.nupkg.sha512",
+    "C:\\Users\\DogNellaf\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\DogNellaf\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\DogNellaf\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\DogNellaf\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.36\\microsoft.netcore.app.host.win-x64.6.0.36.nupkg.sha512"
+  ],
+  "logs": []
+}

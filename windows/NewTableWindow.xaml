@@ -1,0 +1,30 @@
+﻿<Window x:Class="table_editor.windows.NewTableWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:table_editor"
+        mc:Ignorable="d"
+        Title="Создание новой таблицы" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock>Введите количество строк</TextBlock>
+        <TextBox Name="rowsCountBox" Grid.Row="1" MinWidth="250">10</TextBox>
+
+        <TextBlock Grid.Row="2">Введите количество столбцов</TextBlock>
+        <TextBox Name="columnsCountBox" Grid.Row="3" MinWidth="250">10</TextBox>
+
+        <WrapPanel Grid.Row="4" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="0,0,10,0">OK</Button>
+            <Button IsCancel="True" MinWidth="60">Отмена</Button>
+        </WrapPanel>
+
+    </Grid>
+</Window>

@@ -1,0 +1,81 @@
+<Window x:Class="table_editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Icon="/icons/main/main.png"
+        Title="Table Editor"
+        Height="520" Width="900"
+        Closing="Window_Closing">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="New"  Executed="NewFile_Execute" />
+        <CommandBinding Command="Open" Executed="OpenFile_Execute" />
+        <CommandBinding Command="Save" Executed="SaveFile_Execute" />
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Control" Command="New" />
+        <KeyBinding Key="O" Modifiers="Control" Command="Open" />
+        <KeyBinding Key="S" Modifiers="Control" Command="Save" />
+    </Window.InputBindings>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Toolbar -->
+        <ToolBarTray Grid.Row="0">
+            <ToolBar>
+                <Button x:Name="newFileButton" Click="NewFile_Execute" ToolTip="New table (Ctrl+N)">
+                    <Image Source="/icons/main/new.png" Width="16" Height="16" />
+                </Button>
+                <Button x:Name="openFileButton" Click="OpenFile_Execute" ToolTip="Open CSV (Ctrl+O)">
+                    <Image Source="/icons/main/open.png" Width="16" Height="16" />
+                </Button>
+                <Button x:Name="saveFileButton" Click="SaveFile_Execute" ToolTip="Save CSV (Ctrl+S)">
+                    <Image Source="/icons/main/save.png" Width="16" Height="16" />
+                </Button>
+            </ToolBar>
+            <ToolBar>
+                <Button x:Name="addRowButton" Click="AddRow_Click" ToolTip="Add row">
+                    <Image Source="/icons/editor/add_row.png" Width="16" Height="16" />
+                </Button>
+                <Button x:Name="addColButton" Click="AddCol_Click" ToolTip="Add column">
+                    <Image Source="/icons/editor/add_col.png" Width="16" Height="16" />
+                </Button>
+                <Separator />
+                <Button x:Name="delRowButton" Click="DeleteRow_Click" ToolTip="Delete last row">
+                    <TextBlock FontWeight="Bold" Foreground="DarkRed">−R</TextBlock>
+                </Button>
+                <Button x:Name="delColButton" Click="DeleteCol_Click" ToolTip="Delete last column">
+                    <TextBlock FontWeight="Bold" Foreground="DarkRed">−C</TextBlock>
+                </Button>
+            </ToolBar>
+            <ToolBar>
+                <Button x:Name="recalcButton" Click="RecalcFormulas_Click" ToolTip="Recalculate all formulas">
+                    <TextBlock>⟳ Recalc</TextBlock>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <!-- Data grid -->
+        <DataGrid x:Name="mainDataGrid"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CellEditEnding="mainDataGrid_CellEditEnding"
+                  Sorting="mainDataGrid_Sorting" />
+
+        <!-- Status bar -->
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>
+                <TextBlock x:Name="statusText" Text="Ready" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
